@@ -4,7 +4,8 @@
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    /* Forces the container to be 16:9 based on the current width */
+    aspect-ratio: 16 / 9; 
     z-index: -1;
     overflow: hidden;
 }
