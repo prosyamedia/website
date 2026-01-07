@@ -1,13 +1,14 @@
 /* Container that holds your background */
 .background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    /* Forces the container to be 16:9 based on the current width */
-    aspect-ratio: 16 / 9; 
-    z-index: -1;
+    width: 100%;             /* Scales to the width of the screen */
+    max-width: 1920px;       /* Prevents stretching beyond original quality */
+    margin: 0 auto;          /* Centers the image if screen is wider than 1920px */
+    
+    /* This calculates the correct height proportionally based on width */
+    aspect-ratio: 1920 / 700; 
+    
     overflow: hidden;
+    position: relative;
 }
 
 /* The actual poster image */
