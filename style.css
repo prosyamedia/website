@@ -1,3 +1,17 @@
+:root {
+    /* Define your background color as a variable */
+    --page-bg: #000000; 
+}
+
+body {
+    background-color: var(--page-bg);
+    /* Browser automatically picks white or black */
+    color: contrast-color(var(--page-bg)); 
+}
+
+
+
+
 /* Container that holds your background */
 .background-container {
     width: 100%;             /* Scales to the width of the screen */
@@ -69,28 +83,30 @@
     font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive size: scales with screen */
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.4em; /* Spreads letters out for an "artsy" feel */
+    letter-spacing: 0.2em; /* Spreads letters out for an "artsy" feel */
     margin: 0;
-    padding-left: 0.4em; /* Offsets padding to keep text centered */
-    
+    padding-left: 0.2em; /* Offsets padding to keep text centered */
+    background-color: var(--page-bg);
+    color: contrast-color(var(--page-bg));
     /* Elegant Gradient Text */
     background: linear-gradient(to bottom, #ffffff 0%, #a1a1a1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
     /* Subtle glow to help it pop against the image */
-    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    line-height: 1.2;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
 }
 
 .tagline {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 200; /* Ultra thin */
+    font-weight: 600; /* Ultra thin */
     text-transform: uppercase;
-    letter-spacing: 0.8em; /* Even wider spacing than the title */
-    font-size: clamp(0.7rem, 2vw, 1rem);
+    letter-spacing: 0.2em; /* Even wider spacing than the title */
+    font-size: clamp(0.7rem, 2vw, 1.5rem);
     margin-top: 10px;
-    color: rgba(255, 255, 255, 0.7);
+    background-color: var(--page-bg);
+    color: contrast-color(var(--page-bg));
     animation: fadeIn 3s ease-in; /* Adds a slow, artistic reveal */
 }
 
