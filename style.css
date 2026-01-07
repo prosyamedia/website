@@ -63,3 +63,39 @@
     transform: translateY(-2px);
     background-color: #f0f0f0;
 }
+
+.film-title {
+    font-family: 'Cinzel', serif; /* Classic, high-end film look */
+    font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive size: scales with screen */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4em; /* Spreads letters out for an "artsy" feel */
+    margin: 0;
+    padding-left: 0.4em; /* Offsets padding to keep text centered */
+    
+    /* Elegant Gradient Text */
+    background: linear-gradient(to bottom, #ffffff 0%, #a1a1a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* Subtle glow to help it pop against the image */
+    text-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200; /* Ultra thin */
+    text-transform: uppercase;
+    letter-spacing: 0.8em; /* Even wider spacing than the title */
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: fadeIn 3s ease-in; /* Adds a slow, artistic reveal */
+}
+
+/* Artistic Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; letter-spacing: 0.5em; }
+    to { opacity: 0.7; letter-spacing: 0.8em; }
+}
