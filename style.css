@@ -102,7 +102,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; /* Ultra thin */
     text-transform: uppercase;
-    letter-spacing: 0.2em; /* Even wider spacing than the title */
+    letter-spacing: 0.6em; /* Even wider spacing than the title */
     font-size: clamp(0.7rem, 2vw, 1.5rem);
     margin-top: 10px;
     background-color: var(--page-bg);
@@ -112,6 +112,6 @@ body {
 
 /* Artistic Fade-in Animation */
 @keyframes fadeIn {
-    from { opacity: 0; letter-spacing: 0.5em; }
-    to { opacity: 0.7; letter-spacing: 0.8em; }
+    from { opacity: 0; letter-spacing: 0.3em; }
+    to { opacity: 0.7; letter-spacing: 0.6em; }
 }
