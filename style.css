@@ -54,8 +54,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    margin-top: 20px;
+    gap: 12px; /* Space between buttons */
+    
+    /* Rounded Container Styles */
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle dark glass effect */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px; /* Large rounded corners for the main container */
+    
+    max-width: 600px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px); /* Modern frosted-glass effect */
 }
 
 /* Force buttons to be visible and clickable */
