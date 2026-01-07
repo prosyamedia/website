@@ -99,19 +99,32 @@ body {
 }
 
 .tagline {
+        /* Force white text regardless of background calculations */
+    color: #ffffff !important; 
+    
+    /* Ensure it is on a layer above the image */
+    position: relative;
+    z-index: 99; 
+    
+    /* Add a high-contrast shadow so it's visible even on light images */
+    text-shadow: 0px 0px 8px rgba(0, 0, 0, 1), 0px 0px 4px rgba(0, 0, 0, 1);
+    
+    /* Basic visibility checks */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
     font-family: 'Montserrat', sans-serif;
     font-weight: 600; /* Ultra thin */
     text-transform: uppercase;
-    letter-spacing: 0.6em; /* Even wider spacing than the title */
+    letter-spacing: 0.5em; /* Even wider spacing than the title */
     font-size: clamp(0.7rem, 2vw, 1.5rem);
     margin-top: 10px;
-    background-color: var(--page-bg);
-    color: contrast-color(var(--page-bg));
     animation: fadeIn 3s ease-in; /* Adds a slow, artistic reveal */
 }
 
 /* Artistic Fade-in Animation */
 @keyframes fadeIn {
     from { opacity: 0; letter-spacing: 0.3em; }
-    to { opacity: 0.7; letter-spacing: 0.6em; }
+    to { opacity: 0.7; letter-spacing: 0.5em; }
 }
