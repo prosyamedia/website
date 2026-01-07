@@ -1,3 +1,6 @@
+/* script.js */
+
+// Official X/Twitter Loading Snippet
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
     t = window.twttr || {};
@@ -14,3 +17,8 @@ window.twttr = (function(d, s, id) {
 
   return t;
 }(document, "script", "twitter-wjs"));
+
+// Verification
+twttr.ready(function (twttr) {
+    console.log("X/Twitter widgets successfully initialized.");
+});
