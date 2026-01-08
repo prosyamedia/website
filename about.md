@@ -16,7 +16,7 @@ I am always open to discussing new collaborations, creative ventures, or the fut
 
 ---
 
-### Filmmaker & Producer at Prosya
+## Filmmaker & Producer at Prosya
 
 Welcome to **Prosya**. I am Anmol Mishra, a filmmaker and producer dedicated to the art of cinematic storytelling. My work focuses on high-aesthetic production and emotional resonance, bridging the gap between human movement and narrative depth.
 
