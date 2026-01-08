@@ -6,7 +6,6 @@ permalink: /privacy/
 
 # Privacy Policy
 
-
 Privacy Policy for prosya.com
 
 At prosya.com, we prioritize your privacy. This policy explains our commitment to maintaining a website that does not track, collect, or store your personal information.
