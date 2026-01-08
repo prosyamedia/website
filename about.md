@@ -43,8 +43,8 @@ In my role as a Producer, I oversee projects from the spark of an initial idea t
 
 I am always open to discussing new collaborations, creative ventures, or the future of film.
 
-*   **Watch My Work:** Explore my titles on [Amazon Prime](www.amazon.com).
-*   **Stay Updated:** Follow [@prosyamedia]({{ '/' | relative_url }}) on social media for behind-the-scenes insights and project updates.
+*   **Watch My Work:** Explore my titles on [IMDB](https://www.imdb.com/name/nm2665934/).
+*   **Stay Updated:** [Follow @prosyamedia](#footer-socials) on social media for behind-the-scenes insights and project updates.
 *   **Inquiries:** Reach out directly via **a n m o l @ p r o s y a . c o m**
 
 ---
