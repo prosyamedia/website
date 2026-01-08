@@ -15,8 +15,12 @@ At prosya.com, we prioritize your privacy. This policy explains our commitment t
 
 No Data Collection
 
-    We do not collect any personal data from our visitors. This includes, but is not limited to: Names or contact information.
+    We do not collect any personal data from our visitors. This includes, but is not limited to: 
+    
+    Names or contact information.
+    
     IP addresses or device identifiers.
+    
     Geographic location data.
 
 No Tracking or Cookies
@@ -50,6 +54,6 @@ Contact Us
     If you have any questions regarding this privacy policy, you may contact us at:
 
         Email: a n m o l @ p r o s y a . c o m
-        
+
         Website: prosya.com
 
