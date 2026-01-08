@@ -244,8 +244,8 @@ footer a:hover svg {
 
   /* Make sure the text/buttons inside the container also scale up */
   .link-container a {
-    width: 100%;       /* Buttons take full width of container */
-    font-size: 1.2rem; /* Larger text for readability */
+    width: 90%;       /* Buttons take full width of container */
+    font-size: 1.0rem; /* Larger text for readability */
     padding: 18px;     /* Larger tap target */
     text-align: center;
   }
