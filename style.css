@@ -52,12 +52,12 @@ body {
 .link-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+/*    align-items: center; */
     gap: 16px;
     padding: 10px;
     margin: 20px auto; 
     width: 90%;
-    max-width: 500px;
+    max-width: 515px;
 
     /* Light Glass Effect - Makes it visible on black */
     background: rgba(255, 255, 255, 0.15); 
@@ -108,7 +108,7 @@ body {
 .link-button {
     display: block;     /* Vital for <a> tags to act like buttons */
     width: 100%;
-    max-width: 400px;
+    max-width: 422px;
     padding: 16px;
     background-color: #ffffff; /* White background to ensure they are seen */
     color: #000000 !important; /* Black text for high contrast */
