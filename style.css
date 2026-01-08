@@ -266,7 +266,7 @@ footer a:hover svg {
     padding: 10px; 
     
     /* Ensure it doesn't shrink smaller than a readable width */
-    min-width: 320px; 
+    min-width: 300px; 
     
     /* Increase the gap between links so they are easier to tap */
     gap: 24px; 
