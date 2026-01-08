@@ -7,9 +7,13 @@
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
 </head>
 <body>
-    <main>
+
+<main>
+    <div class="link-container">
+        <!-- Jekyll will inject about.md or privacy.md content here -->
         {{ content }}
-    </main>
+    </div>    
+</main>
 
     <!-- Jekyll inserts footer.html here -->
     {% include footer.html %}

@@ -69,6 +69,39 @@ body {
     
     /* Soft outer glow to separate from background */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    /* Main body text (About Me / Privacy content) */
+    color: #F5F5F5;            /* Off-white/Ivory for better readability on black */
+    font-family: 'Inter', sans-serif; /* Clean, modern font */
+    line-height: 1.6;
+}
+
+/* Headings (Movie Titles and Page Titles) */
+.link-container h1, 
+.link-container h2, 
+.link-container h3 {
+  color: #FFC107;            /* Movie Gold / Cyber Amber */
+  text-transform: uppercase; /* Cinematic style */
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Makes text "pop" against movie backgrounds */
+}
+
+/* Paragraphs and Lists */
+.link-container p, 
+.link-container li {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+/* Links inside the text (e.g., email or external links) */
+.link-container a {
+  color: #FFC107;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.link-container a:hover {
+  color: #FFE082; /* Lighter gold glow on hover */
 }
 
 /* Force buttons to be visible and clickable */
