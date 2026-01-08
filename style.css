@@ -260,13 +260,13 @@ footer a:hover svg {
 
     .link-container {
     /* Increase width so it doesn't look thin on narrow screens */
-    width: 90%; 
+    width: 100%; 
     
     /* Reduce horizontal padding to give content more room inside */
     padding: 10px; 
     
     /* Ensure it doesn't shrink smaller than a readable width */
-    min-width: 300px; 
+    min-width: 303px; 
     
     /* Increase the gap between links so they are easier to tap */
     gap: 24px; 
@@ -277,7 +277,7 @@ footer a:hover svg {
 
   /* Make sure the text/buttons inside the container also scale up */
   .link-container a {
-    width: 90%;       /* Buttons take full width of container */
+    width: 100%;       /* Buttons take full width of container */
     font-size: 1.0rem; /* Larger text for readability */
     padding: 10px;     /* Larger tap target */
     text-align: center;
