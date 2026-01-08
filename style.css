@@ -11,9 +11,6 @@ body {
     color: contrast-color(var(--page-bg)); 
 }
 
-
-
-
 /* Container that holds your background */
 .background-container {
     width: 100%;             /* Scales to the width of the screen */
