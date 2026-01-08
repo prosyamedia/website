@@ -225,20 +225,28 @@ footer a:hover svg {
 /* PORTRAIT MODE: Maintain fixed sizes */
 @media screen and (orientation: portrait) {
 
-    .container {
-        /* Keep a fixed width for elements to prevent "squishing" */
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-}
-
-/* LANDSCAPE MODE: Allow responsive scaling */
-@media screen and (orientation: landscape) {
+     .link-container {
+    /* Increase width so it doesn't look thin on narrow screens */
+    width: 95%; 
     
-    .container {
-        /* Allow container to expand to fill the wider landscape screen */
-        width: 90%;
-        max-width: 1200px;
-    }
+    /* Reduce horizontal padding to give content more room inside */
+    padding: 40px 15px; 
+    
+    /* Ensure it doesn't shrink smaller than a readable width */
+    min-width: 320px; 
+    
+    /* Increase the gap between links so they are easier to tap */
+    gap: 24px; 
+    
+    /* Force a fixed margin to keep it centered but maximize space */
+    margin: 10px auto;
+  }
+
+  /* Make sure the text/buttons inside the container also scale up */
+  .link-container a {
+    width: 100%;       /* Buttons take full width of container */
+    font-size: 1.2rem; /* Larger text for readability */
+    padding: 18px;     /* Larger tap target */
+    text-align: center;
+  }
 }
