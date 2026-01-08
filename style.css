@@ -221,3 +221,24 @@ footer svg {
 footer a:hover svg {
     fill: #FFE082;
 }
+
+/* PORTRAIT MODE: Maintain fixed sizes */
+@media screen and (orientation: portrait) {
+
+    .container {
+        /* Keep a fixed width for elements to prevent "squishing" */
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* LANDSCAPE MODE: Allow responsive scaling */
+@media screen and (orientation: landscape) {
+    
+    .container {
+        /* Allow container to expand to fill the wider landscape screen */
+        width: 90%;
+        max-width: 1200px;
+    }
+}
