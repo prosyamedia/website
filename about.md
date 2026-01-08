@@ -6,7 +6,7 @@ permalink: /about/
 
 About Anmol Mishra
 
-Director | Producer | Visionary at Prosya
+Filmmaker at Prosya
 
 Welcome to Prosya. I am Anmol Mishra, a filmmaker and producer dedicated to the art of cinematic storytelling. My work focuses on high-aesthetic production and emotional resonance, bridging the gap between human movement and narrative depth.
 

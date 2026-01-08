@@ -181,3 +181,43 @@ body {
     from { opacity: 0; letter-spacing: 0.3em; }
     to { opacity: 0.7; letter-spacing: 0.5em; }
 }
+
+/* --- Footer Styling: Cyber Amber Palette --- */
+
+/* Initial State: High-visibility Amber */
+footer a, 
+.separator {
+    color: #FFC107 !important; /* Bright Amber Gold */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover State: Glow Effect */
+footer a:hover {
+    color: #FFE082 !important; /* Lighter Pale Gold */
+    text-shadow: 0 0 8px rgba(255, 193, 7, 0.6); /* Subtle cinematic glow */
+    text-decoration: underline;
+}
+
+/* Post-click (Visited): Deep Warm Orange */
+/* This helps users know which administrative pages they've already checked */
+footer a:visited {
+    color: #FF8F00 !important; /* Deep Amber / Burnt Orange */
+}
+
+/* Active State: The moment of the click */
+footer a:active {
+    color: #FFFFFF !important; /* Brief white flash for tactile feedback */
+    transform: scale(0.98);    /* Slight "press" effect */
+}
+
+/* Ensure the Social Icons also follow the color theme if they use currentColor */
+footer svg {
+    fill: #FFC107;
+    transition: fill 0.3s ease;
+}
+
+footer a:hover svg {
+    fill: #FFE082;
+}
