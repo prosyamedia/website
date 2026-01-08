@@ -1,3 +1,5 @@
+---
+---
 :root {
     /* Define your background color as a variable */
     --page-bg: #000000; 
@@ -119,6 +121,7 @@ body {
 .z-0 {
   z-index: 0;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
