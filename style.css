@@ -42,9 +42,7 @@ body {
 
 /* Overlay needs to be forced to the front */
 .content-overlay {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center;     /* Centers vertically */
+    position: relative;
     z-index: 10;        /* Higher layer than the background */
     text-align: center;
     padding: 5px 5px;
