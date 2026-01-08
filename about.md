@@ -6,6 +6,16 @@ permalink: /about/
 
 # About Anmol Mishra
 
+## Connect with Me
+
+I am always open to discussing new collaborations, creative ventures, or the future of film.
+
+*   **Watch My Work:** Explore my titles on [IMDB](https://www.imdb.com/name/nm2665934/).
+*   **Stay Updated:** [Follow @prosyamedia](#footer-socials) on social media for behind-the-scenes insights and project updates.
+*   **Inquiries:** Reach out directly via **a n m o l @ p r o s y a . c o m**
+
+---
+
 ### Filmmaker & Producer at Prosya
 
 Welcome to **Prosya**. I am Anmol Mishra, a filmmaker and producer dedicated to the art of cinematic storytelling. My work focuses on high-aesthetic production and emotional resonance, bridging the gap between human movement and narrative depth.
@@ -39,12 +49,3 @@ In my role as a Producer, I oversee projects from the spark of an initial idea t
 
 ---
 
-## Connect with Me
-
-I am always open to discussing new collaborations, creative ventures, or the future of film.
-
-*   **Watch My Work:** Explore my titles on [IMDB](https://www.imdb.com/name/nm2665934/).
-*   **Stay Updated:** [Follow @prosyamedia](#footer-socials) on social media for behind-the-scenes insights and project updates.
-*   **Inquiries:** Reach out directly via **a n m o l @ p r o s y a . c o m**
-
----
