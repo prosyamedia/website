@@ -87,6 +87,19 @@ body {
     transition: transform 0.2s;
 }
 
+.justify-center {
+  justify-content: center;
+}
+.items-center {
+  align-items: center;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.flex {
+  display: flex;
+}
+
 .link-button:hover {
     transform: translateY(-2px);
     background-color: #f0f0f0;
