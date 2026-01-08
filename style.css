@@ -255,4 +255,31 @@ footer a:hover svg {
     fill: #FFE082;
 }
 
+/* PORTRAIT MODE: Maintain fixed sizes */
+@media screen and (orientation: portrait) {
 
+    .link-container {
+    /* Increase width so it doesn't look thin on narrow screens */
+    width: 90%; 
+    
+    /* Reduce horizontal padding to give content more room inside */
+    padding: 10px; 
+    
+    /* Ensure it doesn't shrink smaller than a readable width */
+    min-width: 320px; 
+    
+    /* Increase the gap between links so they are easier to tap */
+    gap: 24px; 
+    
+    /* Force a fixed margin to keep it centered but maximize space */
+    margin: 10px auto;
+  }
+
+  /* Make sure the text/buttons inside the container also scale up */
+  .link-container a {
+    width: 90%;       /* Buttons take full width of container */
+    font-size: 1.0rem; /* Larger text for readability */
+    padding: 10px;     /* Larger tap target */
+    text-align: center;
+  }
+}
