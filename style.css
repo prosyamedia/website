@@ -105,6 +105,32 @@ body {
     background-color: #f0f0f0;
 }
 
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-duration: .15s;
+}
+.p-2 {
+  padding: .5rem;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.z-0 {
+  z-index: 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 .film-title {
     font-family: 'Cinzel', serif; /* Classic, high-end film look */
     font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive size: scales with screen */
