@@ -1,25 +1,70 @@
 ---
 layout: default
-title: Latest News
+title: Newsroom
 ---
 
-<h1>In The News</h1>
+<h1>Newsroom</h1>
+<p>Your hub for press releases, media coverage, and company updates.</p>
 
-<ul>
-  {% assign sorted = site.newsroom | sort: "date" | reverse %}
+<!-- FILTER BAR -->
+<div class="filters">
+  <button onclick="filterItems('all')">All</button>
+  <button onclick="filterItems('press')">Press Releases</button>
+  <button onclick="filterItems('media')">Media Coverage</button>
+</div>
+
+<!-- SEARCH -->
+<input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
+
+<ul id="news-list">
+  {% assign all_items = site.press | concat: site.media %}
+  {% assign sorted = all_items | sort: "date" | reverse %}
+
   {% for item in sorted %}
-    <li class="newsroom-item">
-      <a href="{{ item.url }}">
-        {{ item.title | truncate: 60 }}
-      </a>
+    <li class="news-item" data-type="{{ item.type }}">
+      <h2>{{ item.title | truncate: 60 }}</h2>
 
-      <p class="summary">
+      <p class="summary-short">
         {{ item.summary | truncate: 140 }}
+        <button onclick="toggleSummary(this)">Read more</button>
       </p>
 
-      <span class="date">
-        {{ item.date | date: "%B %-d, %Y" }}
-      </span>
+      <p class="summary-full" style="display:none;">
+        {{ item.summary }}
+        <button onclick="toggleSummary(this)">Hide</button>
+      </p>
+
+      <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
+
+      {% if item.type == "press" %}
+        <a href="{{ item.url }}">View press release</a>
+      {% else %}
+        <a href="{{ item.url }}" target="_blank">Read article</a>
+      {% endif %}
     </li>
   {% endfor %}
 </ul>
+
+<script>
+function toggleSummary(btn) {
+  const short = btn.parentElement.previousElementSibling
+  const full = btn.parentElement
+  const isOpen = full.style.display === "block"
+  full.style.display = isOpen ? "none" : "block"
+  short.style.display = isOpen ? "block" : "none"
+}
+
+function filterItems(type) {
+  document.querySelectorAll('.news-item').forEach(item => {
+    item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none'
+  })
+}
+
+function searchItems() {
+  const q = document.getElementById('search').value.toLowerCase()
+  document.querySelectorAll('.news-item').forEach(item => {
+    const text = item.innerText.toLowerCase()
+    item.style.display = text.includes(q) ? 'block' : 'none'
+  })
+}
+</script>
