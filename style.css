@@ -291,6 +291,17 @@ footer a:hover svg {
   border-bottom: 1px solid #ddd;
 }
 
+.summary-short,
+.summary-full {
+  /* background: none; */
+  border: none;
+  /* color: #007acc; */
+  cursor: pointer;
+  padding: 0;
+  background-color: var(--page-bg);
+  color: contrast-color(var(--page-bg));
+}
+
 .summary-short button,
 .summary-full button {
   background: none;
