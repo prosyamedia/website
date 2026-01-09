@@ -477,3 +477,28 @@ footer a:hover svg {
   margin-right: 6px;
   margin-bottom: 6px;
 }
+
+.pagination a {
+  padding: 8px 14px;
+  margin: 0 4px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  text-decoration: none;
+  color: #333;
+}
+
+.pagination a.active {
+  background: #222;
+  color: #fff;
+}
+
+
+.rss-subscribe a {
+  color: #007acc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.rss-subscribe a:hover {
+  text-decoration: underline;
+}
