@@ -1,7 +1,9 @@
 collections:
   press:
+    featured: true
     output: true
     permalink: /press/:name/
   media:
+    featured: true
     output: true
     permalink: /media/:name/

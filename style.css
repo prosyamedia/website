@@ -293,9 +293,7 @@ footer a:hover svg {
 
 .summary-short,
 .summary-full {
-  /* background: none; */
   border: none;
-  /* color: #007acc; */
   cursor: pointer;
   padding: 0;
   background-color: var(--page-bg);
@@ -420,3 +418,52 @@ footer a:hover svg {
 }
 
 
+.featured-section {
+  margin: 3rem 0 2rem;
+  padding: 2rem;
+  background: #fafafa;
+  border-radius: 20px;
+}
+
+.featured-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2rem;
+}
+
+.featured-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform 0.2s;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+}
+
+.featured-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.featured-card p {
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.featured-link {
+  color: #007acc;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.featured-link:hover {
+  text-decoration: underline;
+}

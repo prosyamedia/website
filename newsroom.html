@@ -8,6 +8,30 @@ title: Newsroom
   <p>Your hub for press releases, media coverage, and company updates.</p>
 </div>
 
+{% assign all_items = site.press | concat: site.media %}
+{% assign featured_items = all_items | where: "featured", true | sort: "date" | reverse %}
+
+{% if featured_items.size > 0 %}
+<div class="featured-section">
+  <h2>Featured</h2>
+
+  <div class="featured-grid">
+    {% for item in featured_items %}
+      <div class="featured-card">
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.summary }}</p>
+
+        {% if item.type == "press" %}
+          <a class="featured-link" href="{{ item.url }}">Read press release</a>
+        {% else %}
+          <a class="featured-link" href="{{ item.url }}" target="_blank">Read article</a>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
 <div class="newsroom-controls">
   <div class="filters">
     <button onclick="filterItems('all')" class="active">All</button>
