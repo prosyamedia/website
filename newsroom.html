@@ -3,44 +3,48 @@ layout: default
 title: Newsroom
 ---
 
-<h1>Newsroom</h1>
-<p>Your hub for press releases, media coverage, and company updates.</p>
-
-<!-- FILTER BAR -->
-<div class="filters">
-  <button onclick="filterItems('all')">All</button>
-  <button onclick="filterItems('press')">Press Releases</button>
-  <button onclick="filterItems('media')">Media Coverage</button>
+<div class="newsroom-hero">
+  <h1>Newsroom</h1>
+  <p>Your hub for press releases, media coverage, and company updates.</p>
 </div>
 
-<!-- SEARCH -->
-<input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
+<div class="newsroom-controls">
+  <div class="filters">
+    <button onclick="filterItems('all')" class="active">All</button>
+    <button onclick="filterItems('press')">Press Releases</button>
+    <button onclick="filterItems('media')">Media Coverage</button>
+  </div>
 
-<ul id="news-list">
+  <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
+</div>
+
+<ul id="news-list" class="news-grid">
   {% assign all_items = site.press | concat: site.media %}
   {% assign sorted = all_items | sort: "date" | reverse %}
 
   {% for item in sorted %}
-    <li class="news-item" data-type="{{ item.type }}">
-      <h2>{{ item.title | truncate: 60 }}</h2>
+    <li class="news-card" data-type="{{ item.type }}">
+      <div class="news-card-content">
+        <h2>{{ item.title | truncate: 70 }}</h2>
 
-      <p class="summary-short">
-        {{ item.summary | truncate: 140 }}
-        <button onclick="toggleSummary(this)">Read more</button>
-      </p>
+        <p class="summary-short">
+          {{ item.summary | truncate: 160 }}
+          <button class="read-more" onclick="toggleSummary(this)">Read more</button>
+        </p>
 
-      <p class="summary-full" style="display:none;">
-        {{ item.summary }}
-        <button onclick="toggleSummary(this)">Hide</button>
-      </p>
+        <p class="summary-full" style="display:none;">
+          {{ item.summary }}
+          <button class="read-more" onclick="toggleSummary(this)">Hide</button>
+        </p>
 
-      <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
+        <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
 
-      {% if item.type == "press" %}
-        <a href="{{ item.url }}">View press release</a>
-      {% else %}
-        <a href="{{ item.url }}" target="_blank">Read article</a>
-      {% endif %}
+        {% if item.type == "press" %}
+          <a class="news-link" href="{{ item.url }}">View press release</a>
+        {% else %}
+          <a class="news-link" href="{{ item.url }}" target="_blank">Read article</a>
+        {% endif %}
+      </div>
     </li>
   {% endfor %}
 </ul>
@@ -55,14 +59,16 @@ function toggleSummary(btn) {
 }
 
 function filterItems(type) {
-  document.querySelectorAll('.news-item').forEach(item => {
+  document.querySelectorAll('.news-card').forEach(item => {
     item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none'
   })
+  document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'))
+  event.target.classList.add('active')
 }
 
 function searchItems() {
   const q = document.getElementById('search').value.toLowerCase()
-  document.querySelectorAll('.news-item').forEach(item => {
+  document.querySelectorAll('.news-card').forEach(item => {
     const text = item.innerText.toLowerCase()
     item.style.display = text.includes(q) ? 'block' : 'none'
   })
