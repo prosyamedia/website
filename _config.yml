@@ -1,4 +1,4 @@
 collections:
-  press:
+  newsroom:
     output: true
-    permalink: /press/:name/
+    permalink: /newsroom/:name/
