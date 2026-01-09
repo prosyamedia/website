@@ -14,7 +14,7 @@ permalink: /newsroom.xml
 
     {% assign all_items = site.press | concat: site.media %}
     {% assign sorted = all_items | sort: "date" | reverse %}
-    {% assign link = item.data.url %}
+    {% assign link = item.external_url | default: item.url %}
 
     {% for item in sorted %}
     <item>

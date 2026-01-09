@@ -19,6 +19,7 @@ pagination:
 {% assign paginated_items = sorted | slice: offset, page_size %}
 
 {% assign featured_items = all_items | where: "featured", true | sort: "date" | reverse %}
+{% assign link = item.external_url | default: item.url %}
 
 <div class="link-container">
   <h1>Newsroom</h1>
@@ -40,9 +41,9 @@ pagination:
         <p>{{ item.summary }}</p>
 
         {% if item.type == "press" %}
-          <a class="featured-link" href="{{ item.data.url }}">Read press release</a>
+          <a class="featured-link" href="{{ link }}">Read press release</a>
         {% else %}
-          <a class="featured-link" href="{{ item.data.url }}" target="_blank">Read article</a>
+          <a class="featured-link" href="{{ link }}" target="_blank">Read article</a>
         {% endif %}
       </div>
     {% endfor %}
