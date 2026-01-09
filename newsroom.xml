@@ -18,8 +18,8 @@ permalink: /newsroom.xml
     {% for item in sorted %}
     <item>
       <title>{{ item.title | xml_escape }}</title>
-      <link>{{ site.url }}{{ item.url }}</link>
-      <guid>{{ site.url }}{{ item.url }}</guid>
+      <link>{{ item.data.url }}</link>
+      <guid>{{ item.data.url }}</guid>
       <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
       <description>{{ item.summary | xml_escape }}</description>
 
