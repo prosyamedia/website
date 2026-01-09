@@ -37,6 +37,26 @@ title: Newsroom
     <button onclick="filterItems('all')" class="active">All</button>
     <button onclick="filterItems('press')">Press Releases</button>
     <button onclick="filterItems('media')">Media Coverage</button>
+    <div class="tag-filter">
+      <select id="tagSelect" onchange="filterByTag()">
+        <option value="">Filter by tag</option>
+        {% assign all_items = site.press | concat: site.media %}
+        {% assign all_tags = "" | split: "" %}
+
+        {% for item in all_items %}
+          {% for tag in item.tags %}
+            {% unless all_tags contains tag %}
+              {% assign all_tags = all_tags | push: tag %}
+            {% endunless %}
+          {% endfor %}
+        {% endfor %}
+
+        {% for tag in all_tags %}
+          <option value="{{ tag }}">{{ tag }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
   </div>
 
   <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
@@ -48,6 +68,12 @@ title: Newsroom
 
   {% for item in sorted %}
     <li class="news-card" data-type="{{ item.type }}">
+      <div class="tags">
+        {% for tag in item.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+
       <div class="news-card-content">
         <h2>{{ item.title | truncate: 70 }}</h2>
 
@@ -97,4 +123,13 @@ function searchItems() {
     item.style.display = text.includes(q) ? 'block' : 'none'
   })
 }
+
+function filterByTag() {
+  const selected = document.getElementById('tagSelect').value.toLowerCase()
+  document.querySelectorAll('.news-card').forEach(card => {
+    const tags = card.innerText.toLowerCase()
+    card.style.display = selected === "" || tags.includes(selected) ? "block" : "none"
+  })
+}
+
 </script>

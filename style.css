@@ -467,3 +467,13 @@ footer a:hover svg {
 .featured-link:hover {
   text-decoration: underline;
 }
+
+.tag {
+  display: inline-block;
+  background: #f0f0f0;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
