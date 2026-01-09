@@ -1,0 +1,25 @@
+---
+layout: default
+title: Press Releases
+---
+
+<h1>Press Releases</h1>
+
+<ul>
+  {% assign sorted = site.press | sort: "date" | reverse %}
+  {% for item in sorted %}
+    <li class="press-item">
+      <a href="{{ item.url }}">
+        {{ item.title | truncate: 60 }}
+      </a>
+
+      <p class="summary">
+        {{ item.summary | truncate: 140 }}
+      </p>
+
+      <span class="date">
+        {{ item.date | date: "%B %-d, %Y" }}
+      </span>
+    </li>
+  {% endfor %}
+</ul>
