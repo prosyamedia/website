@@ -19,7 +19,6 @@ pagination:
 {% assign paginated_items = sorted | slice: offset, page_size %}
 
 {% assign featured_items = all_items | where: "featured", true | sort: "date" | reverse %}
-{% assign link = item.external_url | default: item.url %}
 
 <div class="link-container">
   <h1>Newsroom</h1>
@@ -36,6 +35,8 @@ pagination:
 
   <div class="featured-grid">
     {% for item in featured_items %}
+      {% assign link = item.external_url | default: item.url %}
+
       <div class="featured-card">
         <h3>{{ item.title }}</h3>
         <p>{{ item.summary }}</p>
@@ -100,6 +101,8 @@ pagination:
 <ul id="news-list" class="news-grid">
 
   {% for item in paginated_items  %}
+    {% assign link = item.external_url | default: item.url %}
+
     <li class="news-card" data-type="{{ item.type }}">
       <div class="tags">
         {% for tag in item.tags %}
@@ -123,9 +126,9 @@ pagination:
         <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
 
         {% if item.type == "press" %}
-          <a class="news-link" href="{{ item.data.url }}">View press release</a>
+          <a class="news-link" href="{{ link }}">View press release</a>
         {% else %}
-          <a class="news-link" href="{{ item.data.url }}" target="_blank">Read article</a>
+          <a class="news-link" href="{{ link }}" target="_blank">Read article</a>
         {% endif %}
       </div>
     </li>
