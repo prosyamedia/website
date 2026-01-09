@@ -53,29 +53,36 @@ pagination:
 
 <div class="newsroom-controls">
   <div class="filters">
-    <button onclick="filterItems('all')" class="active">All</button>
-    <button onclick="filterItems('press')">Press Releases</button>
-    <button onclick="filterItems('media')">Media Coverage</button>
-    <div class="tag-filter">
-      <select id="tagSelect" onchange="filterByTag()">
-        <option value="">Filter by tag</option>
-        {% assign all_items = site.press | concat: site.media %}
-        {% assign all_tags = "" | split: "" %}
+    <span class="filter-item">
+      <button onclick="filterItems('all')" class="active">All</button>
+    </span>
+    <span class="filter-item">
+      <button onclick="filterItems('press')">Press Releases</button>
+    </span>
+    <span class="filter-item">
+      <button onclick="filterItems('media')">Media Coverage</button>
+    </span>
+    <span class="filter-item">
+      <div class="tag-filter">
+        <select id="tagSelect" onchange="filterByTag()">
+          <option value="">Filter by tag</option>
+          {% assign all_items = site.press | concat: site.media %}
+          {% assign all_tags = "" | split: "" %}
 
-        {% for item in all_items %}
-          {% for tag in item.tags %}
-            {% unless all_tags contains tag %}
-              {% assign all_tags = all_tags | push: tag %}
-            {% endunless %}
+          {% for item in all_items %}
+            {% for tag in item.tags %}
+              {% unless all_tags contains tag %}
+                {% assign all_tags = all_tags | push: tag %}
+              {% endunless %}
+            {% endfor %}
           {% endfor %}
-        {% endfor %}
 
-        {% for tag in all_tags %}
-          <option value="{{ tag }}">{{ tag }}</option>
-        {% endfor %}
-      </select>
-    </div>
-
+          {% for tag in all_tags %}
+            <option value="{{ tag }}">{{ tag }}</option>
+          {% endfor %}
+        </select>
+      </div>
+    </span>
   </div>
 
   <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">

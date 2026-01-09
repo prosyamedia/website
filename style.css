@@ -336,6 +336,36 @@ footer a:hover svg {
   gap: 1rem;
 }
 
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: nowrap;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-right: 0.75rem;
+  margin-right: 0.75rem;
+}
+
+/* Add the | separator */
+.filter-item:not(:last-child)::after {
+  content: "|";
+  color: #ccc;
+  margin-left: 0.75rem;
+}
+
+/* Make the select visually match buttons */
+.tag-filter select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
 .filters button {
   padding: 0.5rem 1rem;
   border-radius: 20px;
