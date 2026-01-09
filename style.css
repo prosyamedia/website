@@ -522,6 +522,7 @@ footer a:hover svg {
   color: #fff;
 }
 
+.rss-subscribe { text-align: center; }
 
 .rss-subscribe a {
   color: #007acc;

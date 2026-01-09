@@ -28,7 +28,6 @@ pagination:
   </p>
 </div>
 
-
 {% if featured_items.size > 0 %}
 <div class="featured-section">
   <h2>Featured</h2>
@@ -97,7 +96,6 @@ pagination:
   {% endif %}
 </div>
 
-
 <ul id="news-list" class="news-grid">
 
   {% for item in paginated_items  %}
@@ -150,7 +148,6 @@ pagination:
     <a href="/newsroom/page{{ current_page | plus: 1 }}">Next →</a>
   {% endif %}
 </div>
-
 
 <script>
 function toggleSummary(btn) {
