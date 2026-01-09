@@ -300,16 +300,10 @@ footer a:hover svg {
   padding: 0;
 }
 
-.summary-short button,
-.summary-full button p {
-  background-color: var(--page-bg);
-  color: contrast-color(var(--page-bg));
-}
-
 /* Hero */
 .newsroom-hero {
   text-align: center;
-  padding: 4rem 1rem 2rem;
+  padding: 1rem 1rem 1rem;
 }
 
 .newsroom-hero h1 {
@@ -372,6 +366,8 @@ footer a:hover svg {
   padding: 1.5rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: transform 0.2s;
+  background-color: var(--page-bg);
+  color: contrast-color(var(--page-bg));
 }
 
 .news-card:hover {
