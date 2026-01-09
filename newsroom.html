@@ -122,9 +122,9 @@ pagination:
         <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
 
         {% if item.type == "press" %}
-          <a class="news-link" href="{{ item.url }}">View press release</a>
+          <a class="news-link" href="{{ item.data.url }}">View press release</a>
         {% else %}
-          <a class="news-link" href="{{ item.url }}" target="_blank">Read article</a>
+          <a class="news-link" href="{{ item.data.url }}" target="_blank">Read article</a>
         {% endif %}
       </div>
     </li>
