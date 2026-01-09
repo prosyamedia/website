@@ -284,6 +284,24 @@ footer a:hover svg {
   }
 }
 
+
+.news-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.summary-short button,
+.summary-full button {
+  background-color: var(--page-bg);
+  color: contrast-color(var(--page-bg));
+  /* background: none; */
+  border: none;
+  /* color: #007acc; */
+  cursor: pointer;
+  padding: 0;
+}
+
 /* Hero */
 .newsroom-hero {
   text-align: center;
