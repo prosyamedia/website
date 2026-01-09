@@ -14,12 +14,13 @@ permalink: /newsroom.xml
 
     {% assign all_items = site.press | concat: site.media %}
     {% assign sorted = all_items | sort: "date" | reverse %}
+    {% assign link = item.data.url %}
 
     {% for item in sorted %}
     <item>
       <title>{{ item.title | xml_escape }}</title>
-      <link>{{ item.data.url }}</link>
-      <guid>{{ item.data.url }}</guid>
+      <link>{{ link }}</link>
+      <guid>{{ link }}</guid>
       <pubDate>{{ item.date | date_to_rfc822 }}</pubDate>
       <description>{{ item.summary | xml_escape }}</description>
 
