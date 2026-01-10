@@ -11,8 +11,6 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -28,18 +26,19 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          # Ruby 3.1 is EOL as of March 2025. Use 3.4 for compatibility with modern gems like public_suffix 7.x.
           ruby-version: '3.4' 
           bundler-cache: true
 
       - name: Build Jekyll site
-        # We combine install and build for efficiency; bundler-cache: true handles the caching automatically.
+        # JEKYLL_ENV: production ensures pagination URLs are generated correctly for your live domain.
+        # bundle install: handles the jekyll-paginate-v2 gem from your Gemfile.
+        env:
+          JEKYLL_ENV: production
         run: |
           bundle install
           bundle exec jekyll build -d _site
 
       - name: Upload artifact
-        # v3 is the current requirement for Pages to resolve the "deprecated v3 backend" error.
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -47,13 +46,10 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        # Version 4 is required to work with the updated artifact backend used in upload-pages-artifact@v3+.
         uses: actions/deploy-pages@v4
