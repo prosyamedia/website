@@ -14,13 +14,9 @@ I am always open to discussing new collaborations, creative ventures, or the fut
 *   **Stay Updated:** [Follow @prosyamedia](#footer-socials) on social media for behind-the-scenes insights and project updates.
 *   **Inquiries:** Reach out directly via **a n m o l @ p r o s y a . c o m**
 
----
-
 ## Filmmaker & Producer at Prosya
 
 Welcome to **Prosya**. I am Anmol Mishra, a filmmaker and producer dedicated to the art of cinematic storytelling. My work focuses on high-aesthetic production and emotional resonance, bridging the gap between human movement and narrative depth.
-
----
 
 ## Cinematic Journey & Credits
 
@@ -35,17 +31,10 @@ In this production, I explored the profound and often silent themes of transitio
 ### Romancing Sydney (2025)
 My recent work continues to push the boundaries of the dance-film genre, exploring the symbiosis of movement, rhythm, and urban landscape.
 
----
-
 ## The Vision
 
 As the driving force behind **Prosya**, I view cinema as a universal language. Whether producing an intimate character study or directing large-scale visual projects, my goal is to create immersive experiences that linger with the audience long after the credits roll.
 
----
-
 ## Production Excellence
 
 In my role as a Producer, I oversee projects from the spark of an initial idea to final distribution. In 2026, my focus remains on maintaining the highest standards of production quality while embracing innovative distribution models. I believe in a collaborative approach, working with diverse talents to bring complex, beautiful, and thought-provoking stories to life.
-
----
-
