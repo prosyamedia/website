@@ -4,6 +4,7 @@ title: "Newsroom | Press Releases & Media Coverage"
 description: "Explore the latest press releases, media coverage, and company updates. Stay informed with our newsroom featuring announcements, articles, and featured stories."
 pagination:
   enabled: true
+  collection: all
   per_page: 10
   sort_field: "date"
   sort_reverse: true
@@ -13,12 +14,12 @@ pagination:
 <!-- Canonical URL -->
 <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
 
-<!-- Pagination SEO -->
-{% if pagination.previous %}
-  <link rel="prev" href="{{ pagination.previous.url }}" />
+<!-- paginator SEO -->
+{% if paginator.previous %}
+  <link rel="prev" href="{{ paginator.previous.url }}" />
 {% endif %}
-{% if pagination.next %}
-  <link rel="next" href="{{ pagination.next.url }}" />
+{% if paginator.next %}
+  <link rel="next" href="{{ paginator.next.url }}" />
 {% endif %}
 
 <section class="newsroom-header">
@@ -94,7 +95,7 @@ pagination:
   <h2 class="visually-hidden">Latest News</h2>
 
   <ul id="news-list" class="news-grid">
-    {% for item in pagination.items %}
+    {% for item in paginator.items %}
       {% assign link = item.external_url | default: item.url %}
 
       <li class="news-card" data-type="{{ item.type }}">
@@ -134,18 +135,18 @@ pagination:
 </section>
 
 <nav class="pagination" aria-label="Pagination">
-  {% if pagination.previous %}
-    <a href="{{ pagination.previous.url }}" rel="prev">← Previous</a>
+  {% if paginator.previous %}
+    <a href="{{ paginator.previous.url }}" rel="prev">← Previous</a>
   {% endif %}
 
-  {% for p in pagination.pages %}
+  {% for p in paginator.pages %}
     <a href="{{ p.url }}" class="{% if p.url == page.url %}active{% endif %}">
       {{ p.title }}
     </a>
   {% endfor %}
 
-  {% if pagination.next %}
-    <a href="{{ pagination.next.url }}" rel="next">Next →</a>
+  {% if paginator.next %}
+    <a href="{{ paginator.next.url }}" rel="next">Next →</a>
   {% endif %}
 </nav>
 
