@@ -108,7 +108,7 @@ body {
 .link-button {
     display: block;     /* Vital for <a> tags to act like buttons */
     width: 100%;
-    /* max-width: 422px; */
+    max-width: 422px;
     padding: 16px;
     background-color: #ffffff; /* White background to ensure they are seen */
     color: #000000 !important; /* Black text for high contrast */
