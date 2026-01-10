@@ -22,13 +22,13 @@ We do not collect any personal data from our visitors. This includes, but is not
 
 Our website is built to be a **“zero-cookie”** environment. We do not use:
 
-### Cookies
+#### Cookies
 We do not place small files on your device to track your behavior.
 
-### Tracking Pixels
+#### Tracking Pixels
 We do not use invisible images to monitor your activity.
 
-### Analytics
+#### Analytics
 We do not use third-party analytics services (like Google Analytics) that store user data.
 
 ### Third-Party Services

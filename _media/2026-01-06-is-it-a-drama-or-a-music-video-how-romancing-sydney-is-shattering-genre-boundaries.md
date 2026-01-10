@@ -7,6 +7,3 @@ external_url: "https://thecinetalk.com/is-it-a-drama-or-a-music-video-how-romanc
 type: "media"
 tags: ["Film"]
 ---
-
-
-
