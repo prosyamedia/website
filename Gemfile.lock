@@ -1,5 +1,4 @@
 GEM
-  remote: https://rubygems.org/
   specs:
     addressable (2.8.8)
       public_suffix (>= 2.0.2, < 8.0)
@@ -58,6 +57,7 @@ GEM
     listen (3.9.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
+    logger (1.6.4)
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -83,8 +83,11 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  jekyll (~> 4.3)
-  jekyll-paginate-v2
+  base64
+  csv
+  jekyll (~> 4.4)
+  jekyll-paginate-v2 (~> 3.0)
+  logger
   webrick
 
 BUNDLED WITH
