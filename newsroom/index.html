@@ -70,11 +70,32 @@ pagination:
       <li class="news-card" data-type="{{ item.type }}">
         <article class="news-card-content">
           <div class="tags">
-            {% for tag in item.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+            {% for tag in item.tags %}
+              <span class="summary-short">
+            {{ tag }}
+              </span>
+            {% endfor %}
           </div>
           <h3>{{ item.title | truncate: 70 }}</h3>
-          <p class="summary-short">{{ item.summary | truncate: 160 }} <button class="read-more" onclick="toggleSummary(this)">Read more</button></p>
-          <p class="summary-full" style="display:none;">{{ item.summary }} <button class="read-more" onclick="toggleSummary(this)">Hide</button></p>
+
+          <!-- <p class="summary-short">{{ item.summary | truncate: 160 }} <button class="read-more" onclick="toggleSummary(this)">Read more</button></p>
+          <p class="summary-full" style="display:none;">{{ item.summary }} <button class="read-more" onclick="toggleSummary(this)">Show Less</button></p> -->
+          
+          <details class="summary-wrapper">
+            <summary>
+              <span class="summary-short">{{ item.summary | truncate: 160 }}</span>
+              <span class="read-more-btn">Read more</span>
+            </summary>
+            
+            <div class="summary-full">
+              {{ item.summary }}
+              <!-- This button will close the toggle -->
+              <button type="button" class="filters" onclick="this.closest('details').open = false;">
+                Show less
+              </button>
+            </div>
+          </details>
+
           <time class="date">{{ item.date | date: "%B %-d, %Y" }}</time>
           <a class="news-link" href="{{ link }}">View {% if item.type == "press" %}press release{% else %}article{% endif %}</a>
         </article>
