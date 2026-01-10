@@ -106,15 +106,15 @@ pagination:
           <details class="summary-wrapper">
             <summary>
               <span class="summary-short">{{ item.summary | truncate: 160 }}</span>
-              <span class="read-more-btn">Read more</span>
+              <!-- <span class="read-more-btn">Read more</span> -->
             </summary>
             
             <div class="summary-full">
               {{ item.summary }}
               <!-- This button will close the toggle -->
-              <button type="button" class="filters" onclick="this.closest('details').open = false;">
+              <!-- <button type="button" class="filters" onclick="this.closest('details').open = false;">
                 Show less
-              </button>
+              </button> -->
             </div>
           </details>
 
