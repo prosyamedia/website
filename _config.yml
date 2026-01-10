@@ -7,3 +7,5 @@ collections:
     featured: true
     output: true
     permalink: /media/:name/
+plugins:
+  - jekyll-paginate-v2
