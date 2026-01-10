@@ -4,7 +4,7 @@ date: 2026-01-05
 summary: "In 2026, the “Auteur” era of independent film has redefined how we discover cinema, with audiences increasingly finding their next favorite movie through its sonic identity."
 source: "Indie Pulse Music"
 external_url: "https://indiepulsemusic.com/2026/01/05/the-sound-of-connection-breaking-boundaries-with-the-romancing-sydney-soundtrack/"
-type: media
+type: "media"
 layout: newsroom-item
 tags: ["Soundtrack"]
 ---
