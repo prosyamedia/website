@@ -93,9 +93,9 @@ pagination:
         <article class="news-card-content">
           <div class="tags">
             {% for tag in item.tags %}
-              <span class="summary-short">
+              <button>
             {{ tag }}
-              </span>
+              </button>
             {% endfor %}
           </div>
           <h3>{{ item.title | truncate: 70 }}</h3>
