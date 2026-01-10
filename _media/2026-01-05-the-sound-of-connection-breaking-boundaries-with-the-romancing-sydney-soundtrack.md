@@ -6,6 +6,7 @@ source: "Indie Pulse Music"
 external_url: "https://indiepulsemusic.com/2026/01/05/the-sound-of-connection-breaking-boundaries-with-the-romancing-sydney-soundtrack/"
 type: media
 layout: newsroom-item
+tags: ["Soundtrack"]
 ---
 
 

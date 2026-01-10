@@ -6,6 +6,8 @@ source: "The Inscriber Mag"
 external_url: "https://theinscribermag.com/streaming-vs-cinema-why-niche-digital-platforms-are-the-new-goldmine-for-indie-creators/"
 type: media
 layout: newsroom-item
+tags: ["Business"]
+
 ---
 
 
