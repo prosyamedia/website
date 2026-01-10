@@ -22,15 +22,15 @@ pagination:
   <link rel="next" href="{{ paginator.next_page_path | prepend: site.baseurl }}" />
 {% endif %}
 
-<section class="newsroom-header">
+<!-- <section class="newsroom-header"> -->
   <div class="link-container">
     <h1>Newsroom</h1>
     <p>Your hub for press releases, media coverage, and company updates.</p>
-    <p class="rss-subscribe">
+    <!-- <p class="rss-subscribe"> -->
       <a href="/newsroom.xml" class="link-button">Subscribe to Newsroom RSS</a>
-    </p>
+    <!-- </p> -->
   </div>
-</section>
+<!-- </section> -->
 
 <!-- Featured Logic (Static) -->
 {% assign featured_items = site.press | concat: site.media | where: "featured", true | sort: "date" | reverse %}
