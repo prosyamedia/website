@@ -60,6 +60,28 @@ pagination:
     <button onclick="filterItems('media')">Media Coverage</button>
   </div>
   <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
+
+  <div class="tag-filter">
+    <label for="tagSelect" class="visually-hidden">Filter by tag</label>
+    <select id="tagSelect" onchange="filterByTag()">
+      <option value="">Filter by tag</option>
+
+      {% assign all_items = site.press | concat: site.media %}
+      {% assign all_tags = "" | split: "" %}
+
+      {% for item in all_items %}
+        {% for tag in item.tags %}
+          {% unless all_tags contains tag %}
+            {% assign all_tags = all_tags | push: tag %}
+          {% endunless %}
+        {% endfor %}
+      {% endfor %}
+
+      {% for tag in all_tags %}
+        <option value="{{ tag }}">{{ tag }}</option>
+      {% endfor %}
+    </select>
+  </div>
 </section>
 
 <section class="news-list-section">
