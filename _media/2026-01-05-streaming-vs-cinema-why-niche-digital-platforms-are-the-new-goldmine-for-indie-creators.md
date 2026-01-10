@@ -7,7 +7,6 @@ external_url: "https://theinscribermag.com/streaming-vs-cinema-why-niche-digital
 type: media
 layout: newsroom-item
 tags: ["Business"]
-
 ---
 
 

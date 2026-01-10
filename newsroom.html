@@ -80,21 +80,6 @@ pagination:
     </div>
 </div>
 
-<div class="pagination">
-  {% if current_page > 1 %}
-    <a href="/newsroom/page{{ current_page | minus: 1 }}">← Previous</a>
-  {% endif %}
-
-  {% for i in (1..total_pages) %}
-    <a href="/newsroom/page{{ i }}" class="{% if i == current_page %}active{% endif %}">
-      {{ i }}
-    </a>
-  {% endfor %}
-
-  {% if current_page < total_pages %}
-    <a href="/newsroom/page{{ current_page | plus: 1 }}">Next →</a>
-  {% endif %}
-</div>
 
 <ul id="news-list" class="news-grid">
 
