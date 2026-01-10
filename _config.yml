@@ -15,13 +15,13 @@ plugins:
 pagination:
   enabled: true
   per_page: 10
-  permalink: '/page/:num/'
+  permalink: '/newsroom/page/:num/'
   # 'all' allows paginating across posts, press, and media collections simultaneously.
   # Use a specific name like 'press' if you only want one.
   collection: 'all' 
   sort_field: 'date'
   sort_reverse: true
-  debug: false
+  debug: true
 
 # 4. Optional: AutoPages (Automatically creates pages for each collection)
 # autopages:
