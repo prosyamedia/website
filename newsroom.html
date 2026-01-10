@@ -1,138 +1,153 @@
 ---
 layout: default
-title: Newsroom
-pagination: 
-  enabled: true 
-  per_page: 6 
-  items: all_items
+title: "Newsroom | Press Releases & Media Coverage"
+description: "Explore the latest press releases, media coverage, and company updates. Stay informed with our newsroom featuring announcements, articles, and featured stories."
+pagination:
+  enabled: true
+  per_page: 10
+  sort_field: "date"
+  sort_reverse: true
+  items: "site.press | concat: site.media"
 ---
 
-{% assign all_items = site.press | concat: site.media %}
-{% assign sorted = all_items | sort: "date" | reverse %}
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html','' }}" />
 
-{% assign page_size = 10 %}
-{% assign total_items = sorted.size %}
-{% assign total_pages = total_items | divided_by: page_size | ceil %}
+<!-- Pagination SEO -->
+{% if pagination.previous %}
+  <link rel="prev" href="{{ pagination.previous.url }}" />
+{% endif %}
+{% if pagination.next %}
+  <link rel="next" href="{{ pagination.next.url }}" />
+{% endif %}
 
-{% assign current_page = page.page | default: 1 %}
-{% assign offset = page_size | times: current_page | minus: page_size %}
-{% assign paginated_items = sorted | slice: offset, page_size %}
+<section class="newsroom-header">
+  <div class="link-container">
+    <h1>Newsroom</h1>
+    <p>Your hub for press releases, media coverage, and company updates.</p>
+    <p class="rss-subscribe">
+      <a href="/newsroom.xml" class="link-button">Subscribe to Newsroom RSS</a>
+    </p>
+  </div>
+</section>
 
-{% assign featured_items = all_items | where: "featured", true | sort: "date" | reverse %}
-
-<div class="link-container">
-  <h1>Newsroom</h1>
-  <p>Your hub for press releases, media coverage, and company updates.</p>
-  <p class="rss-subscribe">
-    <a href="/newsroom.xml" class="link-button">Subscribe to Newsroom RSS</a>
-  </p>
-</div>
+{% assign featured_items = site.press | concat: site.media | where: "featured", true | sort: "date" | reverse %}
 
 {% if featured_items.size > 0 %}
-<div class="featured-section">
-  <h2>Featured</h2>
+<section class="featured-section">
+  <h2>Featured Stories</h2>
 
   <div class="featured-grid">
     {% for item in featured_items %}
       {% assign link = item.external_url | default: item.url %}
 
-      <div class="featured-card">
+      <article class="featured-card">
         <h3>{{ item.title }}</h3>
         <p>{{ item.summary }}</p>
 
         {% if item.type == "press" %}
           <a class="featured-link" href="{{ link }}">Read press release</a>
         {% else %}
-          <a class="featured-link" href="{{ link }}" target="_blank">Read article</a>
+          <a class="featured-link" href="{{ link }}" target="_blank" rel="noopener">Read article</a>
         {% endif %}
-      </div>
+      </article>
     {% endfor %}
   </div>
-</div>
+</section>
 {% endif %}
 
-<div class="newsroom-controls">
+<section class="newsroom-controls">
+  <h2 class="visually-hidden">Filters & Search</h2>
+
   <div class="filters">
     <button onclick="filterItems('all')" class="active">All</button>
     <button onclick="filterItems('press')">Press Releases</button>
     <button onclick="filterItems('media')">Media Coverage</button>
   </div>
 
-  <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()">
+  <input type="text" id="search" placeholder="Search…" onkeyup="searchItems()" aria-label="Search newsroom">
+
   <div class="tag-filter">
-      <select id="tagSelect" onchange="filterByTag()">
-        <option value="">Filter by tag</option>
-        {% assign all_items = site.press | concat: site.media %}
-        {% assign all_tags = "" | split: "" %}
+    <label for="tagSelect" class="visually-hidden">Filter by tag</label>
+    <select id="tagSelect" onchange="filterByTag()">
+      <option value="">Filter by tag</option>
 
-        {% for item in all_items %}
-          {% for tag in item.tags %}
-            {% unless all_tags contains tag %}
-              {% assign all_tags = all_tags | push: tag %}
-            {% endunless %}
-          {% endfor %}
-        {% endfor %}
+      {% assign all_items = site.press | concat: site.media %}
+      {% assign all_tags = "" | split: "" %}
 
-        {% for tag in all_tags %}
-          <option value="{{ tag }}">{{ tag }}</option>
-        {% endfor %}
-      </select>
-    </div>
-</div>
-
-
-<ul id="news-list" class="news-grid">
-
-  {% for item in paginated_items  %}
-    {% assign link = item.external_url | default: item.url %}
-
-    <li class="news-card" data-type="{{ item.type }}">
-      <div class="tags">
+      {% for item in all_items %}
         {% for tag in item.tags %}
-          <span class="tag">{{ tag }}</span>
+          {% unless all_tags contains tag %}
+            {% assign all_tags = all_tags | push: tag %}
+          {% endunless %}
         {% endfor %}
-      </div>
+      {% endfor %}
 
-      <div class="news-card-content">
-        <h2>{{ item.title | truncate: 70 }}</h2>
+      {% for tag in all_tags %}
+        <option value="{{ tag }}">{{ tag }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</section>
 
-        <p class="summary-short">
-          {{ item.summary | truncate: 160 }}
-          <button class="read-more" onclick="toggleSummary(this)">Read more</button>
-        </p>
+<section class="news-list-section">
+  <h2 class="visually-hidden">Latest News</h2>
 
-        <p class="summary-full" style="display:none;">
-          {{ item.summary }}
-          <button class="read-more" onclick="toggleSummary(this)">Hide</button>
-        </p>
+  <ul id="news-list" class="news-grid">
+    {% for item in pagination.items %}
+      {% assign link = item.external_url | default: item.url %}
 
-        <span class="date">{{ item.date | date: "%B %-d, %Y" }}</span>
+      <li class="news-card" data-type="{{ item.type }}">
+        <article class="news-card-content">
 
-        {% if item.type == "press" %}
-          <a class="news-link" href="{{ link }}">View press release</a>
-        {% else %}
-          <a class="news-link" href="{{ link }}" target="_blank">Read article</a>
-        {% endif %}
-      </div>
-    </li>
-  {% endfor %}
-</ul>
+          <div class="tags">
+            {% for tag in item.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
 
-<div class="pagination">
-  {% if current_page > 1 %}
-    <a href="/newsroom/page{{ current_page | minus: 1 }}">← Previous</a>
+          <h3>{{ item.title | truncate: 70 }}</h3>
+
+          <p class="summary-short">
+            {{ item.summary | truncate: 160 }}
+            <button class="read-more" onclick="toggleSummary(this)">Read more</button>
+          </p>
+
+          <p class="summary-full" style="display:none;">
+            {{ item.summary }}
+            <button class="read-more" onclick="toggleSummary(this)">Hide</button>
+          </p>
+
+          <time class="date" datetime="{{ item.date | date_to_xmlschema }}">
+            {{ item.date | date: "%B %-d, %Y" }}
+          </time>
+
+          {% if item.type == "press" %}
+            <a class="news-link" href="{{ link }}">View press release</a>
+          {% else %}
+            <a class="news-link" href="{{ link }}" target="_blank" rel="noopener">Read article</a>
+          {% endif %}
+        </article>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+
+<nav class="pagination" aria-label="Pagination">
+  {% if pagination.previous %}
+    <a href="{{ pagination.previous.url }}" rel="prev">← Previous</a>
   {% endif %}
 
-  {% for i in (1..total_pages) %}
-    <a href="/newsroom/page{{ i }}" class="{% if i == current_page %}active{% endif %}">
-      {{ i }}
+  {% for p in pagination.pages %}
+    <a href="{{ p.url }}" class="{% if p.url == page.url %}active{% endif %}">
+      {{ p.title }}
     </a>
   {% endfor %}
 
-  {% if current_page < total_pages %}
-    <a href="/newsroom/page{{ current_page | plus: 1 }}">Next →</a>
+  {% if pagination.next %}
+    <a href="{{ pagination.next.url }}" rel="next">Next →</a>
   {% endif %}
-</div>
+</nav>
 
 <script>
 function toggleSummary(btn) {
@@ -166,5 +181,4 @@ function filterByTag() {
     card.style.display = selected === "" || tags.includes(selected) ? "block" : "none"
   })
 }
-
 </script>
