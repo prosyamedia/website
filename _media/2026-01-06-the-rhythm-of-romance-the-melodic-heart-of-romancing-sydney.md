@@ -5,6 +5,5 @@ summary: "In the modern cinematic landscape of 2026, a film’s soundtrack is of
 source: "Skope Mag"
 external_url: "https://skopemag.com/2026/01/06/the-rhythm-of-romance-the-melodic-heart-of-romancing-sydney"
 type: "media"
-layout: newsroom-item
 tags: ["Soundtrack"]
 ---

@@ -5,15 +5,7 @@ summary: "As of late 2025, the independent film landscape is witnessing a unique
 source: "NY Weekly"
 external_url: "https://nyweekly.com/feature/bridging-cultures-through-movement-an-exclusive-interview-with-filmmaker-anmol-mishra/"
 type: "media"
-layout: newsroom-item
 tags: ["Interview"]
 ---
-
-
-
-
-
-
-
 
 

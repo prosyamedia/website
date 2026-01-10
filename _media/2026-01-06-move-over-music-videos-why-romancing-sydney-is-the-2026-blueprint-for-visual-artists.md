@@ -5,7 +5,6 @@ summary: "In an era where a three-minute music video feels like a fleeting socia
 source: "Rolling Hype"
 external_url: "https://rollinghype.com/move-over-music-videos-why-romancing-sydney-is-the-2026-blueprint-for-visual-artists/"
 type: "media"
-layout: newsroom-item
 tags: ["Film"]
 ---
 

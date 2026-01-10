@@ -5,7 +5,6 @@ summary: "The future of film is here, and it’s gloriously unconventional. In 2
 source: "The Cinetalk"
 external_url: "https://thecinetalk.com/is-it-a-drama-or-a-music-video-how-romancing-sydney-is-shattering-genre-boundaries/"
 type: "media"
-layout: newsroom-item
 tags: ["Film"]
 ---
 
