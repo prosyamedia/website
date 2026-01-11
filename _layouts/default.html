@@ -3,10 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" class="header-logo">
+    <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
     <link rel="alternate" type="application/rss+xml" title="Newsroom RSS" href="/newsroom.xml">
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Prosya",
+    "url": "https://www.prosya.com",
+    "logo": "https://www.prosya.com/assets/logo.svg",
+    "sameAs": [
+        "https://instagram.com/prosyamedia",
+        "https://www.youtube.com/@prosyamedia",
+        "https://www.pinterest.com/prosyamedia",
+        "https://x.com/prosyamedia",
+        "https://www.facebook.com/prosyamedia",
+        "https://www.threads.com/prosyamedia"
+    ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.prosya.com",
+    "name": "Prosya",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.prosya.com/newsroom/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+    }
+    </script>
+
+    {% if page.url == "/newsroom/" %}
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Prosya Newsroom",
+        "description": "Press releases, media coverage, and company updates from Prosya.",
+        "url": "https://www.prosya.com/newsroom/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.prosya.com"
+        }
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {% assign index = 1 %}
+            {% for item in paginator.posts %}
+            {
+            "@type": "ListItem",
+            "position": {{ index }},
+            "url": "{{ item.external_url | default: 'https://www.prosya.com/newsroom/' }}",
+            "name": "{{ item.title | escape }}"
+            }{% if forloop.last == false %},{% endif %}
+            {% assign index = index | plus: 1 %}
+            {% endfor %}
+        ]
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.prosya.com/"
+            },
+            {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Newsroom",
+            "item": "https://www.prosya.com/newsroom/"
+            }
+        ]
+        }
+        </script>
+    {% endif %}
+
 </head>
 <body>
 
