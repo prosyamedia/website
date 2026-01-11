@@ -524,6 +524,12 @@ footer a:hover svg {
   text-decoration: underline;
 }
 
+.header-logo {
+  width: 64px; /* adjust to taste */ 
+  height: auto; 
+  vertical-align: middle; 
+}
+
 .footer-logo {
   width: 32px; /* adjust to taste */ 
   height: auto; 
