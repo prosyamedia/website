@@ -523,3 +523,14 @@ footer a:hover svg {
 .rss-subscribe a:hover {
   text-decoration: underline;
 }
+
+.footer-logo {
+  width: 32px; /* adjust to taste */ 
+  height: auto; 
+  vertical-align: middle; 
+}
+
+.footer-logo-link {
+  display: inline-flex; 
+  align-items: center; 
+}
