@@ -25,7 +25,8 @@ defaults:
 # 3. Plugins
 plugins:
   - jekyll-paginate-v2
-
+  - jekyll-sitemap
+  
 # 4. Corrected Pagination V2 Configuration
 pagination:
   enabled: true

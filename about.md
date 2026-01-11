@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Anmol Mishra
+title: About
 permalink: /about/
 ---
 

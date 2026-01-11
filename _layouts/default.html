@@ -94,6 +94,21 @@
         </script>
     {% endif %}
 
+    {% if page.url contains "/about" %}
+        <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Prosya",
+        "url": "https://www.prosya.com/about/",
+        "isPartOf": {
+            "@type": "WebSite",
+            "url": "https://www.prosya.com"
+        }
+        }
+        </script>
+    {% endif %}
+
 </head>
 <body>
 
