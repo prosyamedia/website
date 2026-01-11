@@ -162,20 +162,20 @@ function searchItems() {
 }
 
 function filterByTag() {
-  const selectedTag = document.getElementById('tagSelect').value.toLowerCase();
+  const selected = document.getElementById('tagSelect').value.trim().toLowerCase();
 
-  document.querySelectorAll('.news-card').forEach(item => {
-    const tags = Array.from(item.querySelectorAll('.tags button'))
-                      .map(btn => btn.innerText.toLowerCase());
+  document.querySelectorAll('.news-card').forEach(card => {
+    const tags = [...card.querySelectorAll('.tags button')]
+      .map(btn => btn.textContent.trim().toLowerCase());
 
     // Show all if no tag selected
-    if (!selectedTag) {
-      item.style.display = 'block';
+    if (!selected) {
+      card.style.display = 'block';
       return;
     }
 
-    // Show only items that contain the selected tag
-    item.style.display = tags.includes(selectedTag) ? 'block' : 'none';
+    // Match tag
+    card.style.display = tags.includes(selected) ? 'block' : 'none';
   });
 }
 
