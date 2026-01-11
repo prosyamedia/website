@@ -527,7 +527,7 @@ footer a:hover svg {
 .header-logo {
   width: 64px; /* adjust to taste */ 
   height: auto; 
-  vertical-align: middle; 
+  display: block;
 }
 
 .footer-logo {
