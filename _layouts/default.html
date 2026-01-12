@@ -113,13 +113,18 @@
 <body>
 
 <main>
+    {% if page.path contains ".md" %}
+    <div class="link-container">
+        <h1 style="text-align:center;">{{ page.title }}</h1>
+    </div>
+    {% endif %}
     <div class="link-container">
         <!-- Jekyll will inject about.md or privacy.md content here -->
         {{ content }}
     </div>    
 </main>
 
-    <!-- Jekyll inserts footer.html here -->
-    {% include footer.html %}
+<!-- Jekyll inserts footer.html here -->
+{% include footer.html %}
 </body>
 </html>
