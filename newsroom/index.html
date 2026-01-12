@@ -143,6 +143,7 @@ pagination:
 {% endif %}
 
 <script>
+
 // Logic remains same as your original script
 function toggleSummary(btn) {
   const short = btn.parentElement.previousElementSibling;
@@ -150,11 +151,13 @@ function toggleSummary(btn) {
   full.style.display = full.style.display === "none" ? "block" : "none";
   short.style.display = short.style.display === "none" ? "block" : "none";
 }
+
 function filterItems(type) {
   document.querySelectorAll('.news-card').forEach(item => {
     item.style.display = (type === 'all' || item.dataset.type === type) ? 'block' : 'none';
   });
 }
+
 function searchItems() {
   const q = document.getElementById('search').value.toLowerCase();
   document.querySelectorAll('.news-card').forEach(item => {
@@ -165,18 +168,27 @@ function searchItems() {
 function filterByTag() {
   const selected = document.getElementById('tagSelect').value.trim().toLowerCase();
 
-  document.querySelectorAll('.news-card').forEach(card => {
+  // 1. Reset type filter buttons
+  document.querySelectorAll('.filters button').forEach(btn => btn.classList.remove('active'));
+
+  // 2. Reset search box
+  document.getElementById('search').value = "";
+
+  // 3. Show all cards first
+  const cards = document.querySelectorAll('.news-card');
+  cards.forEach(card => card.style.display = 'block');
+
+  // 4. If no tag selected, stop here
+  if (!selected) return;
+
+  // 5. Apply tag filter
+  cards.forEach(card => {
     const tags = [...card.querySelectorAll('.tags button')]
       .map(btn => btn.textContent.trim().toLowerCase());
 
-    // Show all if no tag selected
-    if (!selected) {
-      card.style.display = 'block';
-      return;
+    if (!tags.includes(selected)) {
+      card.style.display = 'none';
     }
-
-    // Match tag
-    card.style.display = tags.includes(selected) ? 'block' : 'none';
   });
 }
 
