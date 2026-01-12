@@ -1,5 +1,9 @@
+source "https://rubygems.org"
+
 # Use latest stable Jekyll 4.x
 gem "jekyll", "~> 4.4"
+gem "jekyll-sitemap"
+gem "jekyll-seo-tag"
 
 # Plugins
 group :jekyll_plugins do
