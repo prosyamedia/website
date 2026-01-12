@@ -1,3 +1,6 @@
+url: "https://prosya.com"
+baseurl: ""
+
 # 1. Collection Definitions
 collections:
   press:
