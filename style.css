@@ -165,6 +165,18 @@ body {
   border-width: 0;
 }
 
+.title-wrapper {
+    display: flex;         /* Puts items side-by-side */
+    align-items: center;   /* Vertically centers the logo with the text */
+    justify-content: center; /* Centers the whole group on the page */
+    gap: 15px;             /* Space between the icon and the text */
+}
+
+.logo {
+    width: 80px;           /* Adjust size to match your font height */
+    height: auto;
+}
+
 .film-title {
     font-family: 'Cinzel', serif; /* Classic, high-end film look */
     font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive size: scales with screen */
