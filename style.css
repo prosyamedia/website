@@ -177,24 +177,26 @@ body {
     height: auto;
 }
 
-.film-title {
-    font-family: 'Cinzel', serif; /* Classic, high-end film look */
-    font-size: clamp(2rem, 8vw, 4.5rem); /* Responsive size: scales with screen */
+.link-container {
+    container-type: inline-size;
+}
+
+.link-container .film-title {
+    font-family: 'Cinzel', 'Trajan Pro', 'Optima', 'Palatino Linotype', Palatino, Georgia, serif;
+    font-size: clamp(1.25rem, 9.5cqi, 4.5rem); /* scales to the box, not the screen */
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.2em; /* Spreads letters out for an "artsy" feel */
+    letter-spacing: 0.2em;
+    padding-left: 0.2em; /* matches letter-spacing to keep text centred */
     margin: 0;
-    padding-left: 0.2em; /* Offsets padding to keep text centered */
-    background-color: var(--page-bg);
-    color: contrast-color(var(--page-bg));
-    /* Elegant Gradient Text */
+    line-height: 1.1;
+    color: #fff;
     background: linear-gradient(to bottom, #ffffff 0%, #a1a1a1 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    
-    /* Subtle glow to help it pop against the image */
-    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
-    line-height: 1.1;
+    text-shadow: none; /* cancels the .link-container h1 shadow */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 .tagline {
